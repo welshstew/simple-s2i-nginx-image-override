@@ -11,3 +11,5 @@ RUN chmod -R a+rwx /opt/app-root/src && \
     chown -R 1000:0 /etc/opt/rh/rh-nginx112/nginx
 
 USER 1001
+
+CMD /usr/libexec/s2i/run
