@@ -1,14 +1,14 @@
-FROM 
+FROM registry.redhat.io/rhel8/nginx-116:1-20
 
 USER root
 
 COPY content/ /opt/app-root/src
-COPY nginx.conf /etc/opt/rh/rh-nginx112/nginx
+COPY nginx.conf /etc/nginx
 
 RUN chmod -R a+rwx /opt/app-root/src && \
     chown -R 1000:0 /opt/app-root/src && \
-    chmod -R a+rwx /etc/opt/rh/rh-nginx112/nginx && \
-    chown -R 1000:0 /etc/opt/rh/rh-nginx112/nginx
+    chmod -R a+rwx /etc/nginx && \
+    chown -R 1000:0 /etc/nginx
 
 USER 1001
 
